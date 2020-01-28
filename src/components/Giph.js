@@ -10,7 +10,7 @@ export default function Giph() {
   const getGif = query => {
     setIsLoading(true);
     fetch(
-      `http://api.giphy.com/v1/gifs/search?api_key=O9G4v9d1op9VkzRb7aysQRLbIOQFsJer&q=${query}`,
+      `http://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_API_KEY}&q=${query}`,
     )
       .then(res => res.json())
       .then(data => {
